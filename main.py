@@ -18,7 +18,7 @@ def interface(valor):
     global canvas, num_bombs
     if valor == 0:
         root = Tk()
-        root.title('Mine-fucking-sweeper')
+        root.title('Minesweeper')
         root.resizable(FALSE,FALSE)
         frame = Frame(root)
         frame.grid(row =0 , column = 0)
@@ -51,15 +51,15 @@ def click1(event):
                     
             elif tag[2] == 'X':
                 canvas.delete(ALL)
-                canvas.create_text((40 + ENDX - STARTX)/2,(40 + ENDY - STARTY)/2, text='Você perdeu!hahaha otário!')
+                canvas.create_text((40 + ENDX - STARTX)/2,(40 + ENDY - STARTY)/2, text='You lose! Try again?')
                 canvas.create_rectangle((40 + ENDX - STARTX)/2 - 100, (40 + ENDY - STARTY)/2 + 50, (40 + ENDX - STARTX)/2 + 100, (40 + ENDY - STARTY)/2 + 100, fill='grey', tag = 'reiniciar')
-                canvas.create_text((40 + ENDX - STARTX)/2, (40 + ENDY - STARTY)/2 + 75, text='Reiniciar', tag = 'reiniciar')             
+                canvas.create_text((40 + ENDX - STARTX)/2, (40 + ENDY - STARTY)/2 + 75, text='Restart', tag = 'reiniciar')             
 
             if jogadas == 0:
                 canvas.delete(ALL)
-                canvas.create_text(300,300, text='Parabéns, você ganhou!')
+                canvas.create_text(300,300, text='Congratulations, you won!')
                 canvas.create_rectangle(200, 350, 300, 400, fill='grey', tag = 'reiniciar')
-                canvas.create_text(250, 375, text='Reiniciar')
+                canvas.create_text(250, 375, text='Restart')
         except:
             pass
 
